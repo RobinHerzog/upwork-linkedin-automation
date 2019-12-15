@@ -12,6 +12,7 @@ Authorization: Basic token
 Endpoint: http://localhost/linkedin/connection-request
 
 Input:
+- Linkedin sender (Name)
 - Cookie Linkedin from who the connection request will be send
 - Linkedin url to which I want to connect with
 - Custom message
@@ -21,6 +22,15 @@ Output:
 - ONLY_FOLLOW_BUTTON
 - ONLY_MESSAGE_BUTTON
 - CONNECTION_REQUEST_SUCCESS
+
+# MongoDB
+
+If possible, do not use Mongoose.
+For each connection request, save the action in the following schema:
+- creatatedAt
+- linkedinReceiver
+- linkedinConnectionRequestMessage
+- linkedinSender
 
 ## Linkedin behavior to verify
 - Is the sender already in contact with the receiver
