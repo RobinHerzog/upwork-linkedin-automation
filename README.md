@@ -8,6 +8,7 @@ As a sale man, I want to connect with a selected linkedin profile with a custom 
 
 # API
 Authorization: Basic token 
+
 Endpoint: http://localhost/linkedin/connection-request
 
 Input:
