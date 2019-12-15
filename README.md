@@ -6,8 +6,9 @@ Transform Linkedin in private API to execute automated action that a human would
 
 As a sale man, I want to connect with a selected linkedin profile with a custom message. Three days later, I check if this connection is accepted or not. If yes, I send a follow-up message. If not, I send an email
 
-# API Route
-http://localhost/linkedin/connection-request
+# API
+Authorization: Basic token 
+Endpoint: http://localhost/linkedin/connection-request
 
 Input:
 - Cookie Linkedin from who the connection request will be send
