@@ -31,6 +31,7 @@ For each connection request, save the action in the following schema:
 - linkedinReceiver
 - linkedinConnectionRequestMessage
 - linkedinSender
+- status (see output above)
 
 ## Linkedin behavior to verify
 - Is the sender already in contact with the receiver
