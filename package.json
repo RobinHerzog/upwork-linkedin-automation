@@ -1,34 +1,60 @@
 {
   "name": "upwork-linkedin-automation",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Sasa Mikodanic",
+  "title": "Upwork LinkedIn Auromation",
+  "description": "Upwork LinkedIn Auromation is an API made in typescript, mongodb and nodeJS.",
   "scripts": {
-    "build" : "tsc",
-    "dev": "tsc && node dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --config webpack.config.js",
+    "dev-verbose": "webpack --config webpack.config.js --display-error-details",
+    "build:development": "NODE_ENV=development webpack --config webpack-build.config.js",
+    "build:stage": "NODE_ENV=stage webpack --config webpack-build.config.js",
+    "build:production": "NODE_ENV=production webpack --config webpack-build.config.js",
+    "serve": "nodemon ./dist/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobinHerzog/upwork-linkedin-automation.git"
+    "url": "git@github.com:RobinHerzog/upwork-linkedin-automation.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RobinHerzog/upwork-linkedin-automation/issues"
-  },
-  "homepage": "https://github.com/RobinHerzog/upwork-linkedin-automation#readme",
+  "keywords": [
+    "linkedin",
+    "automation tool"
+  ],
+  "homepage": "http://www.jdoo.cloud",
   "devDependencies": {
-    "@types/express": "^4.17.2",
-    "@types/mongodb": "^3.3.12",
-    "@types/puppeteer": "^2.0.0",
-    "typescript": "^3.7.2"
+    "@types/bluebird": "^3.5.24",
+    "@types/express": "^4.16.0",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/lodash": "^4.14.119",
+    "@types/moment": "^2.13.0",
+    "@types/mongoose": "^5.3.12",
+    "@types/node": "^10.9.4",
+    "@types/passport": "^0.4.6",
+    "@types/passport-jwt": "^3.0.1",
+    "@types/request-ip": "0.0.33",
+    "clean-webpack-plugin": "^0.1.19",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "config": "^3.2.4",
-    "express": "^4.17.1",
-    "mongodb": "^3.3.3",
-    "puppeteer": "^2.0.0"
+    "@types/fast-json-patch": "^1.1.5",
+    "bluebird": "^3.5.1",
+    "chalk": "^2.4.1",
+    "express": "^4.16.3",
+    "fast-json-patch": "^3.0.0-1",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "mongoose": "^5.4.10",
+    "morgan": "^1.9.0",
+    "node-mailjet": "^3.3.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "request-ip": "^2.1.1",
+    "swagger-ui-express": "^4.0.2",
+    "time": "^0.12.0",
+    "yamljs": "^0.3.0"
   }
 }

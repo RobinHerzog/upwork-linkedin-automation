@@ -1,0 +1,1 @@
+export { loginlinkTmpl } from './loginlink';

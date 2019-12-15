@@ -1,9 +1,7 @@
 # Summary
-
-Transform Linkedin in private API to execute automated action that a human would do.
+> Transform Linkedin in private API to execute automated action that a human would do.
 
 # Business case
-
 As a sale man, I want to connect with a selected linkedin profile with a custom message. Three days later, I check if this connection is accepted or not. If yes, I send a follow-up message. If not, I send an email
 
 # API
@@ -41,3 +39,55 @@ For each connection request, save the action in the following schema:
 - Case when this people have only the follow button visible
 
 Similar script: https://github.com/RobinHerzog/api-store/blob/master/store/LinkedIn%20Network%20Booster/LinkedIn%20Network%20Booster.js
+
+
+
+## Installation
+
+```bash
+$ git clone git@github.com:RobinHerzog/upwork-linkedin-automation.git
+$ cd upwork-linkedin-automation
+$ npm install
+```
+
+
+## Ports & Environments
+
+Ports defined in /config/env/ files.
+
+- 6991 - development
+- 6992 - stage
+- 6993 - production
+
+
+
+## Development
+
+Development is done by **./webpack.config.js** with enabled watch files.
+You might have to install nodemon first: `npm install -g nodemon`.
+
+```
+// run in first terminal
+$ export NODE_ENV=development
+$ npm run dev
+or
+$ npm run dev-verbose (for more detailed error messages)
+
+// open another terminal and run
+$ nodemon ./dist/server.js
+or just
+$ npm run serve
+```
+
+
+## Builds
+
+Builds are done by **./webpack-build.config.js** where watch files are disabled.
+
+- `npm run build:development` and then `npm run serve`
+- `npm run build:stage` and then `npm run serve`
+- `npm run build:production` and then `npm run serve`
+
+
+## LICENCE
+Copyright by [Robin Herzog](LICENSE)

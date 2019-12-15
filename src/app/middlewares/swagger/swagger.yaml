@@ -1,0 +1,72 @@
+swagger: '2.0'
+
+
+info:
+  description: 'Upwork Linkedin Automation API'
+  version: 3.0.0
+  title: 'Upwork Linkedin Automation API Service'
+  contact:
+    email: ''
+  license:
+    name: 'Copyright (C) 2019'
+    url: ''
+
+basePath: /v1
+schemes:
+  - http
+  - https
+
+
+tags:
+  -
+    name: linkedin
+    description: 'Linkedin endpoints.'
+
+paths:
+  # LINKEDIN
+  '/linkedin/connection-request':
+    post:
+      responses:
+        $ref: '#/definitions/DResponses'
+      tags:
+        - linkedin
+      summary: 'send connection request'
+      description: 'Send linkedin connection request with some message.'
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        -
+          $ref: '#definitions/AuthenticationHeader'
+        -
+          in: body
+          name: 'body'
+          description: 'LI request object.'
+          required: true
+          schema:
+            type: object
+            properties:
+              cookie:
+                type: object
+              li_profile_id:
+                type: string
+              message:
+                type: string
+
+
+# MODELS
+definitions:
+  DResponses:
+    200:
+      description: OK
+    404:
+      description: URL not found
+    500:
+      description: Internal server error
+
+  AuthenticationHeader:
+    in: header
+    name: API-Key
+    type: string
+    required: true
