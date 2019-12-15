@@ -18,6 +18,7 @@ Output:
 - CONNECTION_REQUEST_PENDING
 - ONLY_FOLLOW_BUTTON
 - ONLY_MESSAGE_BUTTON
+- CONNECTION_REQUEST_SUCCESS
 
 ## Linkedin behavior to verify
 - Is the sender already in contact with the receiver
