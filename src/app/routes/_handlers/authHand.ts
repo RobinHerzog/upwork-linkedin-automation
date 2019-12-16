@@ -10,7 +10,6 @@ class AuthHand {
   checkApiKey(req: IRequest, res: IResponse, next: INext) {
     const api_key_header = req.header('API-Key');
     const api_key_config = config.api_key;
-    console.log(api_key_header);
 
     if (api_key_header === api_key_config) {
       next();

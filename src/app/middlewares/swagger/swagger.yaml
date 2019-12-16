@@ -31,7 +31,7 @@ paths:
       tags:
         - linkedin
       summary: 'send connection request'
-      description: 'Send linkedin connection request with some message.'
+      description: Send linkedin connection request with some message. li_at is login token cookie. Copy it from chrome dev tools - Application - Cookies
       produces:
         - application/json
       consumes:
@@ -47,8 +47,12 @@ paths:
           schema:
             type: object
             properties:
-              cookie:
-                type: object
+              #cookie:
+              #  type: string
+              #  description: Login with username:password. Then open chrome dev tools and in console type console.log(document.cookie.replace(/\"/g, '\\\"'))
+              cookie_li_at:
+                type: string
+                description: li_at is login token cookie. Copy it from chrome dev tools - Application - Cookies
               li_profile_id:
                 type: string
               message:

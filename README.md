@@ -80,6 +80,7 @@ $ npm run serve
 ```
 
 
+
 ## Builds
 
 Builds are done by **./webpack-build.config.js** where watch files are disabled.
@@ -87,6 +88,21 @@ Builds are done by **./webpack-build.config.js** where watch files are disabled.
 - `npm run build:development` and then `npm run serve`
 - `npm run build:stage` and then `npm run serve`
 - `npm run build:production` and then `npm run serve`
+
+
+
+## Endpoints
+
+- POST /v1/linkedin/connection-request
+```json
+{
+  "cookie_li_at": "AQEDARf4NAkDuHhHAAABbw9DB_gAAAFvM0-L-...",
+  "li_profile_id": "emrick-coombs-bb0199183",
+  "message": "Hello, I want to make connection with you.",
+}
+```
+*NOTICE:* Use Chrome dev tool - Application - Cookies to get value of "li_at" cookie and fill "cookie_li_at". Cookie "li_at contains login token."
+![li_at](./img/li_at.png)
 
 
 ## LICENCE
