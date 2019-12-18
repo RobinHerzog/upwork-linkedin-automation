@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import * as puppeteer from 'puppeteer';
 import * as cheerio from 'cheerio';
 
@@ -8,12 +7,12 @@ import config from './libs/config';
 
 // functions
 import browserTab from './functions/browserTab';
-import cookie_takeFromInput from './functions/cookie_takeFrominput';
+import cookie_login from './functions/cookie_login';
 import openLoginPage from './functions/openLoginPage';
 import cookie_saveToFile from './functions/cookie_saveToFile';
 import profile_openPage from './functions/profile_openPage';
-
-
+import profile_sendRequest from './functions/profile_sendRequest';
+import logout from './functions/logout';
 
 
 // function flow
@@ -21,16 +20,18 @@ import FunctionFlow from 'src/app/lib/functionflow/FunctionFlow';
 const ff = new FunctionFlow();
 const funcDefs = [
   browserTab,
-  cookie_takeFromInput,
+  cookie_login,
   openLoginPage,
   cookie_saveToFile,
-  profile_openPage
+  profile_openPage,
+  profile_sendRequest,
+  logout
 ];
 ff.register(funcDefs);
 ff.libInject({ff, puppeteer, cheerio, logger, config});
 
 
-
+// main
 const main = async (cookies_arr: any, li_profile_id: string, message: string) => {
 
   // initialize input as data carrier
@@ -41,12 +42,16 @@ const main = async (cookies_arr: any, li_profile_id: string, message: string) =>
     page: '' // puppeteer page object
   };
 
-  let x = await ff.serialRange(input, 0, 3, 2100, config.debugFF);
-  x = await ff.serialRange(input, 4, 4, 800, config.debugFF);
+  let x = await ff.serialRange(input, 0, 3, 1300, config.debugFF);
+  x = await ff.serialRange(input, 4, 6, 3400, config.debugFF);
 
 
   return x;
 };
+
+
+
+
 
 
 export default main;

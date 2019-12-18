@@ -16,8 +16,7 @@ const connOpts = {
   keepAliveInitialDelay: 300000,
   connectTimeoutMS: timeout,
   poolSize: 2,
-  autoReconnect: true,
-  reconnectTries: 3,
+  useUnifiedTopology: true
 };
 
 

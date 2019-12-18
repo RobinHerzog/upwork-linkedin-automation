@@ -1,8 +1,8 @@
-/**
- * Open browser and browser's tab.
- */
 import * as devices from 'puppeteer/DeviceDescriptors';
+import chalk from 'chalk';
 
+
+// devices
 const devicesExpanded = [
   {
     name: 'Desktop 1920x1080',
@@ -34,10 +34,15 @@ const devicesExpanded = [
 const device = devicesExpanded[0]; // select a device
 
 
+
+/**
+ * Open browser and browser's tab.
+ */
 export default async (x, libs) => {
   const config = libs.config;
   const logger = libs.logger;
 
+  console.log(chalk.green('\n\nEngine started.'));
 
   const browser = await libs.puppeteer.launch(config.puppeteer);
   const page = await browser.newPage();
