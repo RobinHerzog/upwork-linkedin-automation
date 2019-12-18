@@ -11,6 +11,7 @@ import browserTab from './functions/browserTab';
 import cookie_takeFromInput from './functions/cookie_takeFrominput';
 import openLoginPage from './functions/openLoginPage';
 import cookie_saveToFile from './functions/cookie_saveToFile';
+import profile_openPage from './functions/profile_openPage';
 
 
 
@@ -23,6 +24,7 @@ const funcDefs = [
   cookie_takeFromInput,
   openLoginPage,
   cookie_saveToFile,
+  profile_openPage
 ];
 ff.register(funcDefs);
 ff.libInject({ff, puppeteer, cheerio, logger, config});
@@ -33,13 +35,14 @@ const main = async (cookies_arr: any, li_profile_id: string, message: string) =>
 
   // initialize input as data carrier
   const input = {
-    cookies_arr,
-    li_profile_id,
-    message,
-    page: '' // puppeteer page
+    cookies_arr, // AQEDARf4NAkFoFByAAABbxm5Kzs...
+    li_profile_id, // emrick-coombs-bb0199183
+    message, // Hi, I want make connection.
+    page: '' // puppeteer page object
   };
 
-  const x = await ff.serialRange(input, 0, 3, 3400, config.debugFF);
+  let x = await ff.serialRange(input, 0, 3, 2100, config.debugFF);
+  x = await ff.serialRange(input, 4, 4, 800, config.debugFF);
 
 
   return x;
